@@ -17,10 +17,10 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 ## Voulez-vous utiliser ce serveur?
 
+1. Installer Node.js 20 ou supérieur
 1. (Créer une fork et) Cloner
 1. Installer les dépendances Node - `npm install`
-1. Compiler les sources - `npm run compile`
-1. Lancer le serveur de développement - `npm start`
+1. Compiler les sources et lancer le serveur de développement - `npm start`
 1. Lancer les tests (pas besoin de lancer le serveur d'abord) - `npm run test`
 1. Lancer les tests en mode TDD - `npm run watch`
 1. Lancer un seul test - `npm run test -- -g "nom ou partie du nom d'un test"`
@@ -36,14 +36,4 @@ Voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0
 
 ## Consulter la documentation de l'API
 
-Pour générer et consulter la documentation, exécuter les commandes suivantes :
-
-```
-npm run compile
-npm start 
-```
-
-Ouvrir votre navigateur à l'une des URL suivantes, s'il ne s'ouvre pas automatiquement :
-
-http://127.0.0.1:3200/docs/index  
-http://localhost:3200/docs/index
+Pour générer et consulter la documentation, exécuter `npm start`. Ouvrir l'URL affichée dans la console.
