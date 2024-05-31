@@ -2,10 +2,6 @@
 
 Application utilisée dans le cadre du cours de LOG210 et développée avec Node, Express et TypeScript.
 
-## Diagramme de classes (généré par tplant)
-
-![dcl](dist/docs/dcl.svg)
-
 Ce système doit être utilisé pour obtenir l'information de base pour la réalisation de votre laboratoire en LOG210. Il possède les qualités suivantes:
 
  - il est simple pour les débutants en LOG210
@@ -14,6 +10,10 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
  - il est orienté objet (avec TypeScript)
  - il contient des tests pour l'API (avec Mocha)
  - il fait une séparation entre les couches présentation et domaine, selon la méthodologie de conception du cours LOG210 (Larman)
+
+## Modèle du domaine
+
+![Modèle du domaine](https://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/feature/multiple-changes/docs/mdd.puml)
 
 ## Voulez-vous utiliser ce serveur?
 
@@ -36,4 +36,4 @@ Voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0
 
 ## Consulter la documentation de l'API
 
-Pour générer et consulter la documentation, exécuter `npm start`. Ouvrir l'URL affichée dans la console.
+Pour générer et consulter la documentation, exécuter `npm run all_docs`, puis `npm start`. Ouvrir l'URL affichée dans la console.

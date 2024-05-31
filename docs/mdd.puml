@@ -1,7 +1,5 @@
 @startuml MDD
 
-
-
 class Semester <<Planification>>  {
   name: string;
   start: string;
@@ -44,6 +42,7 @@ class Grade <<Document légaux>> {
   type_id: integer;
   note: number;
 }
+
 class University <<Facultatif,Organisation>>
 
 Course "1" -- "*" Group : décrit >
