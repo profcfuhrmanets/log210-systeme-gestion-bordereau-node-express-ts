@@ -27,7 +27,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 Voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a40
 
-## Utiliser ce serveur avec Docker
+## Utiliser ce serveur avec Docker (optionnel)
 
 - Création de votre image docker
   - `docker build -t sgb --file Dockerfile .`
