@@ -164,9 +164,9 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/v3/healt/ping",
+    "url": "/api/v3/health/ping",
     "title": "ping",
-    "group": "Healt",
+    "group": "Health",
     "description": "<p>Echo pour confirmer le fonctionnement de SGB</p>",
     "version": "3.0.0",
     "success": {
@@ -182,7 +182,7 @@ define({ "api": [
       }
     },
     "filename": "src/routes/HealtRouter.ts",
-    "groupTitle": "Healt",
+    "groupTitle": "Health",
     "name": "GetApiV3HealtPing"
   },
   {

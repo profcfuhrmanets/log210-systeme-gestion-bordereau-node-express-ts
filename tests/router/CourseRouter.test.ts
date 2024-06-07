@@ -1,28 +1,17 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
-import md5 from 'md5';
 import app from '../../src/App';
-import { Teacher } from '../../src/model/Teacher';
-import { Student } from '../../src/model/Student';
+import supertest from 'supertest';
+const request = supertest(app);
 import type { CourseJSON, StudentJSON } from '../../src/model';
-
-
-
-chai.use(chaiHttp);
-const expect = chai.expect;
-const should = chai.should();
-
-
 
 describe("CourseRouterTest", () => {
 
       it('get all courses', async () => {
-        const res = await chai.request(app).get('/api/v3/course/all')
-        expect(res.status).to.equal(200);
-        expect(res).to.be.json;
+        const res = await request.get('/api/v3/course/all')
+        expect(res.status).toEqual(200);
+        expect(res.type).toBe('application/json');
         
         let courses: CourseJSON[] = require('../../src/data/courses.json');
-        expect(res.body.data).to.deep.equal(courses);
+        expect(res.body.data).toEqual(courses);
       }, 10000);
 
 });
