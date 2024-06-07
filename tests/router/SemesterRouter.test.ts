@@ -1,21 +1,18 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
 import app from '../../src/App';
-import type { SemesterJSON } from '../../src/model';
+import supertest from 'supertest';
+const request = supertest(app);
 
-chai.use(chaiHttp);
-const expect = chai.expect;
-const should = chai.should();
+import type { SemesterJSON } from '../../src/model';
 
 describe("SemesterRouterTest", () => {
 
       it('get all semesters', async () => {
-        const res = await chai.request(app).get('/api/v3/semester/all')
-        expect(res.status).to.equal(200);
-        expect(res).to.be.json;
+        const res = await request.get('/api/v3/semester/all')
+        expect(res.status).toEqual(200);
+        expect(res.type).toBe('application/json');
         
         let semesters: SemesterJSON[] = require('../../src/data/semester.json');
-        expect(res.body.data).to.deep.equal(semesters);
+        expect(res.body.data).toEqual(semesters);
       }, 10000);
 
 });
