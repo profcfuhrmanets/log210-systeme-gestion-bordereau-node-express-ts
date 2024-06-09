@@ -1,12 +1,8 @@
-import fs from 'fs';
-import path from 'path';
 import type { ScheduleJSON } from ".";
 
 export class Schedule {
-  static all(): ScheduleJSON[] {
-    const jsonFilePath = path.resolve(__dirname, '../data/Schedule.json');
-    const data = fs.readFileSync(jsonFilePath, 'utf8');
-    const schedules: ScheduleJSON[] = JSON.parse(data);
+  static all(): ScheduleJSON[]{
+    let schedules: ScheduleJSON[] = require('../data/schedule.json');
     return schedules;
   }
 
