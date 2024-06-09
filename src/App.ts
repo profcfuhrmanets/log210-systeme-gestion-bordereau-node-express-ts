@@ -7,7 +7,7 @@ import { scheduleRouter } from './routes/ScheduleRouter';
 import { semesterRouter } from './routes/SemesterRouter';
 import { studentRouter } from './routes/StudentRouter';
 import { teacherRouter } from './routes/TeacherRouter';
-import { healtRouter } from './routes/HealtRouter';
+import { healthRouter as healthRouter } from './routes/HealthRouter';
 import { gradeRouter} from './routes/GradeRouter';
 
 
@@ -52,7 +52,7 @@ class App {
       res.redirect('docs/index.html');
     });
 
-    this.express.use('/api/v3/healt', healtRouter.router);
+    this.express.use('/api/v3/health', healthRouter.router);
     this.express.use('/api/v3/course',courseRouter.router)
     this.express.use('/api/v3/Schedule',scheduleRouter.router)
     this.express.use('/api/v3/semester',semesterRouter.router)

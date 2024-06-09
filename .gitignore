@@ -1,10 +1,6 @@
 .DS_Store
 node_modules
-.nyc_output
 coverage
-dist/controller
-dist/model 
-dist/routes 
-dist/App.js 
-dist/index.js 
+dist
 
+madge.png

@@ -5,7 +5,7 @@ import {validUserJSON, StudentJSON} from '.'
 
 export class Student{
 
-  static login(email: string, password: string) : validUserJSON {
+  static login(email: string, password: string) : validUserJSON | null {
     const student = Student.all().find(student => email == student.id);
     return student ? { token: md5(email), user: student } : null;
   }

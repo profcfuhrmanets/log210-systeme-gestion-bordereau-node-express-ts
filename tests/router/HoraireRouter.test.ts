@@ -1,25 +1,18 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
 import app from '../../src/App';
+import supertest from 'supertest';
+const request = supertest(app);
+
 import type { ScheduleJSON } from '../../src/model';
-
-
-
-chai.use(chaiHttp);
-const expect = chai.expect;
-const should = chai.should();
-
-
 
 describe("ScheduleRouterTest", () => {
 
       it('get all Schedules', async () => {
-        const res = await chai.request(app).get('/api/v3/Schedule/all')
-        expect(res.status).to.equal(200);
-        expect(res).to.be.json;
+        const res = await request.get('/api/v3/Schedule/all')
+        expect(res.status).toEqual(200);
+        expect(res.type).toBe('application/json');
         
         let Schedules: ScheduleJSON[] = require('../../src/data/Schedule.json');
-        expect(res.body.data).to.deep.equal(Schedules);
+        expect(res.body.data).toEqual(Schedules);
       }, 10000);
 
 });

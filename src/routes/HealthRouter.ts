@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 
-export class HealtRouter {
+export class HealthRouter {
   router: Router;
   
   /**
@@ -31,8 +31,8 @@ export class HealtRouter {
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
-    * @api {get} /api/v3/healt/ping ping
-    * @apiGroup Healt
+    * @api {get} /api/v3/health/ping ping
+    * @apiGroup Health
     * @apiDescription Echo pour confirmer le fonctionnement de SGB
     * @apiVersion 3.0.0
     *
@@ -46,5 +46,5 @@ export class HealtRouter {
 }
 
 // exporter its configured Express.Router
-export const healtRouter = new HealtRouter();
-healtRouter.init();
+export const healthRouter = new HealthRouter();
+healthRouter.init();
