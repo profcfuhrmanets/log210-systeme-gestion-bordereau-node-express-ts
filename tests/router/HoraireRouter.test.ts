@@ -11,7 +11,7 @@ describe("ScheduleRouterTest", () => {
         expect(res.status).toEqual(200);
         expect(res.type).toBe('application/json');
         
-        let Schedules: ScheduleJSON[] = require('../../src/data/Schedule.json');
+        let Schedules: ScheduleJSON[] = require('../../src/data/schedule.json');
         expect(res.body.data).toEqual(Schedules);
       }, 10000);
 
