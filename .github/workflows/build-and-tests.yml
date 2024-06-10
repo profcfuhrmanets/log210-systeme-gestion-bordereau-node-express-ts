@@ -23,7 +23,7 @@ jobs:
       - run: npm test
     
   circular-dependencies:
-    runs-on: ubuntun-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
