@@ -1,8 +1,3 @@
-// interface EntityJSON {
-//   id: string;
-// }
-
-
 interface GroupStudentJSON{
   group_id: string;
   student_id: string;

@@ -6,7 +6,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
  - il est simple pour les débutants en LOG210
    - il n'y a pas de cadriciel pour le front-end ni pour la persistance, mais ça n'empêche pas d'ajouter ces dimensions.
-   - il est seulement [REST niveau 1](https://restfulapi.net/richardson-maturity-model/#level-one), mais ça n'empêche pas de modifier l'API pour qu'il soit [REST niveau 3](https://restfulapi.net/richardson-maturity-model/#level-three).
+   - il est seulement [REST niveau 2](https://restfulapi.net/richardson-maturity-model/#level-two), mais ça n'empêche pas de modifier l'API pour qu'il soit [REST niveau 3](https://restfulapi.net/richardson-maturity-model/#level-three).
  - il est orienté objet (avec TypeScript)
  - il contient des tests pour l'API (avec Mocha)
  - il fait une séparation entre les couches présentation et domaine, selon la méthodologie de conception du cours LOG210 (Larman)
@@ -17,7 +17,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 ## Voulez-vous utiliser ce serveur?
 
-1. Installer Node.js 20 ou supérieur
+1. Installer Node.js 17 ou supérieur
 1. (Créer une fork et) Cloner
 1. Installer les dépendances Node - `npm install`
 1. Compiler les sources et lancer le serveur de développement - `npm start`

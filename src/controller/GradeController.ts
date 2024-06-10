@@ -1,17 +1,14 @@
 import { Grade } from '../model/Grade';
 import { GradeJSON} from '../model';
 
-
-// import type { GradeJSON } from "../data";
-
 // classe contrôleur de session GRASP
 export class GradeController {
 
     /**
     *  opérations systèmes
     */
-  public insert(query: any): string {
-      return Grade.getInstance().insert(query);
+  public insert(student_id:string, group_id:string, type:string, type_id:number, grade:number):string {
+      return Grade.getInstance().insert(student_id, group_id, type, type_id, grade);
     }
   
   public group(group_id: string) : GradeJSON[] {

@@ -1,7 +1,7 @@
 [{
         "id": "LOG121",
         "prealable": "none",
-        "titre": "Conception orientée object"
+        "titre": "Conception orientée objet"
     },
     {
         "id": "LOG210",
@@ -10,7 +10,7 @@
     },
     {
         "id": "LOG240",
-        "titre": "Test et maintenance"
+        "titre": "Tests et maintenance"
     },
     {
         "id": "LOG320",
@@ -20,7 +20,7 @@
     {
         "id": "LOG410",
         "prealable": "LOG240",
-        "titre": "AAnalyse de besoins et spécifications"
+        "titre": "Analyse de besoins et spécifications"
     },
     {
         "id": "LOG430",
