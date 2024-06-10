@@ -27,6 +27,9 @@ class App {
 
   // Configure Express middleware.
   private middleware(): void {
+    const staticFilesPath = path.resolve(__dirname, '../dist');
+    console.log('Serving static files from:', staticFilesPath);
+    this.express.use(express.static(staticFilesPath));
     this.express.use(logger('dev'));
     this.express.use(express.json());
     this.express.use(express.urlencoded({ extended: false }));
