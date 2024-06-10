@@ -1,7 +1,4 @@
 # Système de gestion des bordereaux (SGB)
-[![Build and Tests](https://github.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/actions/workflows/build-and-tests.yml/badge.svg)](https://github.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/actions/workflows/build-and-tests.yml)
-
-Application utilisée dans le cadre du cours de LOG210 et développée avec Node, Express et TypeScript
 
 [![Build and Tests](https://github.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/actions/workflows/build-and-tests.yml/badge.svg)](https://github.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/actions/workflows/build-and-tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/badge.svg?branch=feature/multiple-changes)](https://coveralls.io/github/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts?branch=feature/multiple-changes)
@@ -19,7 +16,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 ## Modèle du domaine
 
-![Modèle du domaine](https://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/feature/multiple-changes/docs/mdd.puml)
+![Modèle du domaine](https://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/master/docs/mdd.puml)
 
 ## Voulez-vous utiliser ce serveur?
 
