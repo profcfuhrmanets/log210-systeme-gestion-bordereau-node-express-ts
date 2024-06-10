@@ -35,7 +35,7 @@ export class StudentRouter {
     }
     
     /**
-    * lister les étudiants
+    * Lister les étudiants
     */
     public all(req: Request, res: Response, next: NextFunction) {
       let data = this.controller.all()
@@ -76,37 +76,25 @@ export class StudentRouter {
       });
     }
     
-    //apidoc -i src/routes/ -o docs/
-    
-    /**
-    * Take each handler, and attach to one of the Express.Router's
-    * endpoints.
-    */
     init() {
-      
-      
       /**
-      * Take each handler, and attach to one of the Express.Router's
-      * endpoints.
       * @api {get} /api/v3/student/login  login
       * @apiGroup Student
-      * @apiDescription Authentification de l'étudiant et récupération du token d'authentification
+      * @apiDescription Authentification de l'étudiant et récupération du jeton d'authentification.
       * @apiVersion 3.0.0
-      * @apiParam {String} email courriel de l'étudiant.  Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP
-      * @apiParam {String} password non vérifier.
+      * @apiParam {String} email Courriel de l'étudiant. Vous devez encoder email avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
+      * @apiParam {String} password N'est pas vérifié.
       *
       * @apiSuccess (200) {String}  message Success
-      * @apiSuccess (200) {String}  token Authentification token à inclure dans les requêtes subséquentes
+      * @apiSuccess (200) {String}  token Jeton d'authentification à inclure dans les requêtes subséquentes.
       * @apiSuccess (200) {JSON}  user {first_name: string, last_name: string, id: string}
       */
       this.router.get('/login', this.login.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
       
       /**
-      * Take each handler, and attach to one of the Express.Router's
-      * endpoints.
       * @api {get} /api/v3/student/all all
       * @apiGroup Student
-      * @apiDescription récupération de tout les enseignant
+      * @apiDescription Récupérer tous les enseignants.
       * @apiVersion 3.0.0
       * @apiSuccess (200) {JSON}  data [{
       *   first_name: string,
@@ -119,14 +107,12 @@ export class StudentRouter {
       
       
       /**
-      * Take each handler, and attach to one of the Express.Router's
-      * endpoints.
       * @api {get} /api/v3/student/fromtoken fromtoken
       * @apiGroup Student
-      * @apiDescription Récupérer un étudiant à partir de son token
+      * @apiDescription Récupérer un étudiant à partir de son jeton d'authentification.
       * @apiVersion 3.0.0
       *
-      * @apiParam {String} token Authentification token
+      * @apiParam {String} token Jeton d'authentification.
       *
       * @apiSuccess (200) {JSON}   data { 
       *   first_name: string,
@@ -138,11 +124,9 @@ export class StudentRouter {
       
       
       /**
-      * Take each handler, and attach to one of the Express.Router's
-      * endpoints.
       * @api {get} /api/v3/student/groupstudent groupstudent
       * @apiGroup Student
-      * @apiDescription Récupérer le lien entre les étudiants et les groupes
+      * @apiDescription Récupérer le lien entre les étudiants et les groupes.
       * @apiVersion 3.0.0
       *
       *

@@ -16,7 +16,7 @@ export class SemesterRouter {
     this.init();
   }
   /**
-  * lister les Schedules
+  * Lister les semestres
   */
   public all(req: Request, res: Response, next: NextFunction) {
     let data = this.controller.all()
@@ -27,20 +27,12 @@ export class SemesterRouter {
       data: data
     });
   }
-  
-  
-  /**
-  * Take each handler, and attach to one of the Express.Router's
-  * endpoints.
-  */
+
   init() {
-    
     /**
-    * Take each handler, and attach to one of the Express.Router's
-    * endpoints.
     * @api {get} /api/v3/semester/all all
     * @apiGroup Semester
-    * @apiDescription Récupérer la liste de tous les semestres
+    * @apiDescription Récupérer la liste de tous les semestres.
     * @apiVersion 3.0.0
     *
     * @apiSuccess (200) {JSON} data
@@ -54,9 +46,6 @@ export class SemesterRouter {
     ]
     */
     this.router.get('/all', this.all.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-    
-    
-    
   }
 }
 

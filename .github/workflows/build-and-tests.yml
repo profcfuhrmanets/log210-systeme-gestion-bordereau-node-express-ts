@@ -21,3 +21,15 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
+
+      - name: Upload coverage data to Coveralls
+        if: matrix.os == 'ubuntu-latest'
+        uses: coverallsapp/github-action@v2
+    
+  circular-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install -g madge
+      - run: madge src/App.ts -c

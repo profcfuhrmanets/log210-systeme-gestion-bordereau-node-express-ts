@@ -16,7 +16,7 @@ export class ScheduleRouter {
     this.init();
   }
   /**
-  * lister les Schedules
+  * Lister les groupes-cours
   */
   public all(req: Request, res: Response, next: NextFunction) {
     let data = this.controller.all()
@@ -27,18 +27,16 @@ export class ScheduleRouter {
       data: data
     });
   }
-  
-  
+
   /**
   * Take each handler, and attach to one of the Express.Router's
   * endpoints.
   */
   init() {
-    
     /**
     * @api {get} /api/v3/Schedule/all all
     * @apiGroup Schedule
-    * @apiDescription Récupérer la liste de tous les Schedules
+    * @apiDescription Récupérer la liste de tous les horaires des groupes-cours.
     * @apiVersion 3.0.0
     *
     * @apiSuccess (200) {JSON}  data
@@ -55,9 +53,6 @@ export class ScheduleRouter {
     ]
     */
     this.router.get('/all', this.all.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-    
-    
-    
   }
 }
 
