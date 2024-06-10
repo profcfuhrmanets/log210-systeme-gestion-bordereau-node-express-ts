@@ -23,6 +23,7 @@ jobs:
       - run: npm test
 
       - name: Upload coverage data to Coveralls
+        if: matrix.os == 'ubuntu-latest'
         uses: coverallsapp/github-action@v2
     
   circular-dependencies:
