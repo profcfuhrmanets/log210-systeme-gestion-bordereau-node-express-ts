@@ -27,7 +27,7 @@ export class StudentRouter {
           token: data.token,
           user: data.user
         });
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         let code = 500; // internal server error
         res.status(code).json({ error: error.toString() });
@@ -50,7 +50,7 @@ export class StudentRouter {
     public fromtoken(req: Request, res: Response, next: NextFunction) {
       try {
         // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
-        let token:string = req.query.token;
+        let token:string = req.query.token as string; // Cast the value to string
         
         let data = this.controller.fromToken(token);
         res.status(200)
@@ -59,7 +59,7 @@ export class StudentRouter {
           status: res.status,
           user: data
         });
-      } catch (error) {
+      } catch (error: any) {
         console.log(error);
         let code = 500; // internal server error
         res.status(code).json({ error: error.toString() });

@@ -33,7 +33,7 @@ export class Grade {
   }
   
   public group(group_id: string): GradeJSON[] {
-    const results = [];
+    const results: any[] = [];
     Grade.multimap.forEach((entry, key) => {
       if (entry.group_id == group_id) {
         results.push(entry);
