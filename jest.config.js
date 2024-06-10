@@ -131,6 +131,7 @@ const config = {
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
+ testRunner: "jest-circus/runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: [],
@@ -172,7 +173,7 @@ const config = {
 
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
-
+  testRunner: "jest-circus/runner",
   // A map from regular expressions to paths to transformers
   // transform: undefined,
 
