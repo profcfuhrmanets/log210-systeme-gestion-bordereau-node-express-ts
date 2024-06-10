@@ -1,51 +1,51 @@
 @startuml MDD
+skinparam style strictuml
+hide empty members
 
-class Semester <<Planification>>  {
-  name: string;
-  start: string;
-  end: string;
+class Semester {
+  name: string
+  start: string
+  end: string
 }
-class User <<Role>> {
-  first_name: string;
-  last_name: string;
-  id: string;
+class User {
+  firstName: string
+  lastName: string
+  id: string
 }
 
-class Group <<Service>>
+' traduction de groupe-cours est Section
+class "CourseSection" as Group 
 
-class Schedule <<Horaire>> {
-  group_id: string;
-  day: string;
-  hours: string;
-  activity: string;
+class Schedule {
+  groupId: string
+  day: string
+  hours: string
+  activity: string
   mode: string
   local: string
-  teacher_id: string
+  teacherId: string
 }
 
- class Course <<Description d'entite>> {
-  id: string;
-  titre: string;
+class Course {
+  id: string
+  titre: string
 }
 
-class Student <<Role>> extends User {
+class Student extends User
+
+class Teacher extends User
+
+class "Mark" as Grade {
+  studentId: string
+  groupId: string
+  type: string
+  typeId: integer
+  note: number
 }
 
-class Teacher <<Role>> extends User {
-  
-}
+class University
 
-class Grade <<Document légaux>> {
-  student_id: string;
-  group_id: string;
-  type: string;
-  type_id: integer;
-  note: number;
-}
-
-class University <<Facultatif,Organisation>>
-
-Course "1" -- "*" Group : décrit >
+Course "1" -- "*" Group : Décrit >
 Schedule "*" -- "1" Group : Offert selon <
 Schedule "*" -- "1" Teacher : Enseigne dans un group cours selon <
 Semester "1" -- "*" Schedule: Offre des groupe cours selon >
@@ -53,8 +53,8 @@ Grade "*" --  "1" Student: effectue des\n travaux pour obtenir <
 Grade "*" -- "1" Group : demande la réalisation\nde travaux pour obtenir <
 Teacher "1" -- "*" Course: est responsable de > 
 Student "1" -- "*" Group : est inscrit >
-University "1" -r- "*" Teacher: emploie >
-University "1" -r- "*" Student: Offre des services >
-University "1" -d- "*" Semester: Gère >
+University "1" -- "*" Teacher: emploie >
+University "1" -- "*" Student: Offre des services >
+University "1" -- "*" Semester: Gère >
 
 @enduml
