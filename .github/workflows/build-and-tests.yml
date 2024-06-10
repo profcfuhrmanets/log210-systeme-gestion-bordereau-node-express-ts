@@ -21,3 +21,11 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
+    
+  circular-dependencies:
+    runs-on: ubuntun-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install -g madge
+      - run: madge src/App.ts -c
