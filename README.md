@@ -1,4 +1,6 @@
 # Système de gestion des bordereau 
+[![Build and Tests](https://github.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/actions/workflows/build-and-tests.yml/badge.svg)](https://github.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/actions/workflows/build-and-tests.yml)
+
 Application utilisée dans le cadre du cours de LOG210 et développée avec Node, Express et TypeScript
 
 ## Diagramme de classe (généré par tplant)
