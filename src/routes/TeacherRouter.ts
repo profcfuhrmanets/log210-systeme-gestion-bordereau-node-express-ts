@@ -64,21 +64,14 @@ export class TeacherRouter {
     }
   }
 
-
-  //apidoc -i src/routes/ -o docs/
-
-  /**
-  * Take each handler, and attach to one of the Express.Router's
-  * endpoints.
-  */
   init() {
 
     /**
       * @api {get} /api/v3/teacher/login login
       * @apiGroup Teacher
-      * @apiDescription Authentification de l'enseignant et récupération du jeton d'authentificationé
+      * @apiDescription Authentification de l'enseignant et récupération du jeton d'authentification
       * @apiVersion 3.0.0
-      * @apiParam {String} email Courriel de l'enseignant. Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP.
+      * @apiParam {String} email Courriel de l'enseignant. Vous devez encoder email avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
       * @apiParam {String} password N'est pas vérifié.
       *
       * @apiSuccess (200) {String}  message Success
@@ -94,7 +87,7 @@ export class TeacherRouter {
     /**
     * @api {get}/api/v3/teacher/all all
     * @apiGroup Teacher
-    * @apiDescription récupération de tout les enseignant
+    * @apiDescription Récupération de tous les enseignants
     * @apiVersion 3.0.0
     * @apiSuccess (200) {JSON} user [{
     *   first_name: string,
@@ -119,7 +112,6 @@ export class TeacherRouter {
     this.router.get('/fromtoken', this.fromtoken.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
   }
 }
-
 
 // exporter its configured Expres.Router
 export const teacherRouter = new TeacherRouter();

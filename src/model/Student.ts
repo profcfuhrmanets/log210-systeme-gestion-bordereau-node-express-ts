@@ -23,7 +23,7 @@ export class Student{
   static all() : StudentJSON[]{
     let students = []
     for (let i = 1; i <= 100; i++){
-      students.push({first_name: `first_name_${i}`,last_name: `last_name_${i}`,id: `first_name.last_name+${i}@gmail.com` })  // console.log(i);
+      students.push({first_name: `first_name_${i}`,last_name: `last_name_${i}`,id: `first_name.last_name+${i}@gmail.com` })
     }
     return students;
   }

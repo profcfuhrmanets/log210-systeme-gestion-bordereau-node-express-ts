@@ -38,15 +38,6 @@ class App {
     /* This function will change when we start to add more
      * API endpoints */
     let router = express.Router();
-   
-    /**
-         * @api {get} /dcl
-         * @apiGroup Documentation
-         * @apiDescription  Afficher le diagramme de classe
-         */
-    router.get('/dcl2', function (req, res) {
-      res.redirect('/docs/dcl.svg');
-    });
 
     router.get('/', function (req, res) {
       res.redirect('docs/index.html');
@@ -54,17 +45,15 @@ class App {
 
     this.express.use('/api/v3/health', healthRouter.router);
     this.express.use('/api/v3/course',courseRouter.router)
-    this.express.use('/api/v3/Schedule',scheduleRouter.router)
+    this.express.use('/api/v3/schedule',scheduleRouter.router)
     this.express.use('/api/v3/semester',semesterRouter.router)
     this.express.use('/api/v3/student',studentRouter.router)
     this.express.use('/api/v3/teacher', teacherRouter.router)
     this.express.use('/api/v3/grade',gradeRouter.router)
     this.express.use('/docs', express.static(path.join(__dirname,'docs')));
-    this.express.use('/dcl', express.static(path.join(__dirname,'docs/dcl.svg')));
     this.express.use('/static', express.static(path.join(__dirname, 'public')));
     this.express.use('/', router);  // routage de base
-
-
   }
 }
+
 export default new App().express;

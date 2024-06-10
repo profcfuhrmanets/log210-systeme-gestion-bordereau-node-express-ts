@@ -64,7 +64,6 @@ export class GradeRouter {
       * @apiParam {String} type Nom de la classe correspondant au type de travail.
       * @apiParam {integer} type_id Identifiant du travail.
       * @apiParam {number} note Note obtenue pour ce travail.
-      
       *
       * @apiSuccess (200) {JSON}  data
       [

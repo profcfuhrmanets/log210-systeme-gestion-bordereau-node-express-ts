@@ -17,7 +17,7 @@ export class CourseRouter {
     }
 
      /**
-    * lister les cours
+    * Lister les cours
     */
      public all(req: Request, res: Response, next: NextFunction) {
           let data = this.controller.all()
@@ -28,10 +28,7 @@ export class CourseRouter {
                   data: data
               });
     }
-    /**
-    * Take each handler, and attach to one of the Express.Router's
-    * endpoints.
-    */
+
     init() {
          /**
      * @api {get} /api/v3/course/all all
