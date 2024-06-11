@@ -67,12 +67,12 @@ export class TeacherRouter {
   init() {
 
     /**
-      * @api {get} /api/v3/teacher/login login
+      * @api {get} /api/v3/teacher/login?email=:email&password=:password S'authentifier en tant qu'enseignant et obtenir un jeton d'authentification
       * @apiGroup Teacher
       * @apiDescription Authentification de l'enseignant et récupération du jeton d'authentification
       * @apiVersion 3.0.0
-      * @apiParam {String} email Courriel de l'enseignant. Vous devez encoder email avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
-      * @apiParam {String} password N'est pas vérifié.
+      * @apiQuery {String} email Courriel de l'enseignant. Vous devez encoder email avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
+      * @apiQuery {String} password N'est pas vérifié.
       *
       * @apiSuccess (200) {String}  message Success
       * @apiSuccess (200) {String}  token Jeton d'authentification à inclure dans les requêtes subséquentes.

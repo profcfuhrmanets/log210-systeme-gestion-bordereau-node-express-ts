@@ -63,18 +63,18 @@ export class GradeRouter {
     * @apiDescription Insérer une note associée à un étudiant, un groupe cours et un devoir ou un questionnaire.
     * @apiVersion 3.0.0
     
-    * @apiParam {String} student_id Identifiant de l'étudiant.
-    * @apiParam {String} group_id Identifiant du groupe.
-    * @apiParam {String} type Nom de la classe correspondant au type de travail.
-    * @apiParam {integer} type_id Identifiant du travail.
-    * @apiParam {number} grade Note obtenue pour ce travail.
+    * @apiBody {String} student_id Identifiant de l'étudiant.
+    * @apiBody {String} group_id Identifiant du groupe.
+    * @apiBody {String} type Nom de la classe correspondant au type de travail.
+    * @apiBody {integer} type_id Identifiant du travail.
+    * @apiBody {number} grade Note obtenue pour ce travail.
     *
     * @apiSuccess (200) {JSON} student_id:string Identifiant de l'étudiant
     */
     this.router.post('/insert', this.insert.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
 
     /**
-    * @api {get} /api/v3/grade/student student
+    * @api {get} /api/v3/grade/student/:student_id Récupérer les notes d'un étudiant
     * @apiGroup Grade
     * @apiDescription Liste des notes d'un étudiant.
     * @apiVersion 3.0.0
@@ -95,7 +95,7 @@ export class GradeRouter {
     this.router.get('/student', this.student.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     
     /**
-    * @api {get} /api/v3/grade/group group
+    * @api {get} /api/v3/grade/group/:group_id Récupérer les notes d'un groupe
     * @apiGroup Grade
     * @apiDescription Liste des notes d'un groupe.
     * @apiVersion 3.0.0

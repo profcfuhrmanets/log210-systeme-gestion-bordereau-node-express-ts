@@ -78,12 +78,12 @@ export class StudentRouter {
     
     init() {
       /**
-      * @api {get} /api/v3/student/login  login
+      * @api {get} /api/v3/student/login?email=:email&password=:password S'authentifier en tant qu'étudiant et obtenir un jeton d'authentification
       * @apiGroup Student
       * @apiDescription Authentification de l'étudiant et récupération du jeton d'authentification.
       * @apiVersion 3.0.0
-      * @apiParam {String} email Courriel de l'étudiant. Vous devez encoder email avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
-      * @apiParam {String} password N'est pas vérifié.
+      * @apiQuery {String} email Courriel de l'étudiant. Vous devez encoder email avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
+      * @apiQuery {String} password N'est pas vérifié.
       *
       * @apiSuccess (200) {String}  message Success
       * @apiSuccess (200) {String}  token Jeton d'authentification à inclure dans les requêtes subséquentes.
@@ -107,7 +107,7 @@ export class StudentRouter {
       
       
       /**
-      * @api {get} /api/v3/student/fromtoken fromtoken
+      * @api {get} /api/v3/student/fromtoken/:token Récupérer un étudiant à partir de son jeton d'authentification.
       * @apiGroup Student
       * @apiDescription Récupérer un étudiant à partir de son jeton d'authentification.
       * @apiVersion 3.0.0
