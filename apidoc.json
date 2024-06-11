@@ -1,6 +1,6 @@
 {
     "name": "Système de gestion des bordereaux",
     "version": "3.0.0",
-    "description": "Système de gestion des bordereaux (SGB) utilisé dans le cadre du cours de LOG210 et développé avec Node, Express et TypeScript.<br><a href='https://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-systeme-gestion-bordereau-node-express-ts/master/docs/mdd.puml'>Voir le modèle du domaine</a><br><a href='madge.png'>Vérifier les références circulaires avec Madge</a>",
+    "description": "Système de gestion des bordereaux (SGB) utilisé dans le cadre du cours de LOG210 et développé avec Node, Express et TypeScript.",
     "title": "Système de gestion des bordereaux"
 }

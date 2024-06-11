@@ -11,7 +11,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
    - il n'y a pas de cadriciel pour le front-end ni pour la persistance, mais ça n'empêche pas d'ajouter ces dimensions.
    - il est seulement [REST niveau 2](https://restfulapi.net/richardson-maturity-model/#level-two), mais ça n'empêche pas de modifier l'API pour qu'il soit [REST niveau 3](https://restfulapi.net/richardson-maturity-model/#level-three).
  - il est orienté objet (avec TypeScript)
- - il contient des tests pour l'API (avec Mocha)
+ - il contient des tests pour l'API (avec Jest)
  - il fait une séparation entre les couches présentation et domaine, selon la méthodologie de conception du cours LOG210 (Larman)
 
 ## Modèle du domaine

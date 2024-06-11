@@ -12,11 +12,8 @@
     "all_docs": "npm run docs && npm run tplant && npm run copydata",
     "docs": "apidoc -i src/routes/ -o dist/docs ",
     "tplant": "tplant --input src/App.ts  -A --output dist/docs/dcl.svg",
-    "precompile": "npm run clean",
-    "clean": "rimraf dist/controller && rimraf dist/model && rimraf dist/routes && rimraf dist/App.js && rimraf dist/index.js",
-    "compile": "npm run compile:ts",
-    "compile:ts": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
-    "copydata": "cp -R src/data dist/data"
+    "compile": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
+    "copydata": "shx cp -R src/data dist/data"
   },
   "watch": {
     "test": "{src,tests}/*.js"
@@ -37,7 +34,7 @@
     "jest": "^29.7.0",
     "jest-config": "^29.7.0",
     "npm-watch": "^0.13.0",
-    "rimraf": "^5.0.7",
+    "shx": "^0.3.4",
     "supertest": "^7.0.0",
     "tplant": "^3.1.0",
     "ts-jest": "^29.1.4",
