@@ -1,5 +1,5 @@
 export module Utils {
-  function isFunction(func) {
+  function isFunction(func: any) {
     return Object.prototype.toString.call(func) === '[object Function]';
   }
 }

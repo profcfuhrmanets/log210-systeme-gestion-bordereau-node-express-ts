@@ -15,7 +15,7 @@
     "precompile": "npm run clean",
     "clean": "rimraf dist/controller && rimraf dist/model && rimraf dist/routes && rimraf dist/App.js && rimraf dist/index.js",
     "compile": "npm run compile:ts",
-    "compile:ts": "tsc --p tsconfig.json --outDir ./dist",
+    "compile:ts": "npx tsc",
     "copydata": "cp -R src/data dist/data"
   },
   "watch": {
