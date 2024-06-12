@@ -5,18 +5,19 @@
   "main": "index.js",
   "scripts": {
     "startWithDoc": "npm run compile && npm run all_docs && node dist/index.js",
-    "start": "npm run compile && npm run copydata && node dist/index.js",
+    "start": "npm run compile && npm run copydata && node dist/src/index.js",
     "start-docker": "apidoc -i src/routes/ -o dist/docs/ && node dist/index.js",
-    "test": "jest --colors --silent",
+    "pretest": "tsc && npm run copydata && npm run docs",
+    "test": "jest dist/tests --colors --silent",
     "watch": "jest --coverage --watchAll",
     "all_docs": "npm run docs && npm run tplant && npm run copydata",
-    "docs": "apidoc -i src/routes/ -o dist/docs ",
+    "docs": "apidoc -i src/routes/ -o dist/src/docs ",
     "tplant": "tplant --input src/App.ts  -A --output dist/docs/dcl.svg",
     "precompile": "npm run clean",
     "clean": "rimraf dist/controller && rimraf dist/model && rimraf dist/routes && rimraf dist/App.js && rimraf dist/index.js",
     "compile": "npm run compile:ts",
     "compile:ts": "npx tsc",
-    "copydata": "cp -R src/data dist/data"
+    "copydata": "cp -R src/data dist/src/data"
   },
   "watch": {
     "test": "{src,tests}/*.js"
