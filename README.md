@@ -11,7 +11,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
    - il n'y a pas de cadriciel pour le front-end ni pour la persistance, mais ça n'empêche pas d'ajouter ces dimensions.
    - il est seulement [REST niveau 2](https://restfulapi.net/richardson-maturity-model/#level-two), mais ça n'empêche pas de modifier l'API pour qu'il soit [REST niveau 3](https://restfulapi.net/richardson-maturity-model/#level-three).
  - il est orienté objet (avec TypeScript)
- - il contient des tests pour l'API (avec Mocha)
+ - il contient des tests pour l'API (avec Jest)
  - il fait une séparation entre les couches présentation et domaine, selon la méthodologie de conception du cours LOG210 (Larman)
 
 ## Modèle du domaine
@@ -20,7 +20,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 ## Voulez-vous utiliser ce serveur?
 
-1. Installer Node.js 17 ou supérieur
+1. [Installer Node.js 20](https://nodejs.org/en/download/package-manager) ou supérieur
 1. (Créer une fork et) Cloner
 1. Installer les dépendances Node - `npm install`
 1. Compiler les sources et lancer le serveur de développement - `npm start`
@@ -40,3 +40,50 @@ Voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0
 ## Consulter la documentation de l'API
 
 Pour générer et consulter la documentation, exécuter `npm run all_docs`, puis `npm start`. Ouvrir l'URL affichée dans la console.
+
+## Interagir avec l'API avec TypeScript
+
+Pour interagir avec l'API du SGB dans votre application, installer la bibliothèque suivante dans votre projet - `npm install node-fetch`
+
+Puis, importer la bibliothèque dans le fichier `.ts` concerné :
+
+```js
+import fetch from 'node-fetch';
+```
+
+Exemple avec une requête `GET` :
+
+```js
+fetch("http://localhost:3200/api/v3/student/all")
+    .then(async response =>
+    {
+        var data = await response.json();
+
+        console.log(data);
+    })
+    .catch(error => console.error("Error: ", error));
+```
+
+Exemple avec une requête `POST` :
+
+```js
+var params = {
+    student_id: "first_name.last_name%2B1%40gmail.com",
+    group_id: "S20213-LOG210-01",
+    type: "Devoir1",
+    type_id: 2,
+    grade: 75.1
+};
+
+fetch("http://localhost:3200/api/v3/grade/insert",
+{
+    method: "post",
+    body: JSON.stringify(params),
+    headers: {"Content-Type": "application/json"}
+}).then(async response =>
+{
+    var data = await response.json();
+
+    console.log(data);
+});
+```
