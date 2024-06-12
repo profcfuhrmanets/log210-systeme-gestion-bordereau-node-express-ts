@@ -69,7 +69,7 @@ const config = {
   // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
-  // maxWorkers: "50%",
+  maxWorkers: "50%",  // Use 50% of the CPU cores 
 
   // An array of directory names to be searched recursively up from the requiring module's location
   // moduleDirectories: [
@@ -131,7 +131,6 @@ const config = {
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
- testRunner: "jest-circus/runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: [],
@@ -176,6 +175,12 @@ const config = {
   testRunner: "jest-circus/runner",
   // A map from regular expressions to paths to transformers
   // transform: undefined,
+  transform: {
+    '^.+\\.tsx?$': ['ts-jest', {
+      isolatedModules: true,  // speed up tests by isolating modules
+      testEnvironment: "node"
+    }],
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
