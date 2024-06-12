@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "startWithDoc": "npm run compile && npm run all_docs && node dist/index.js",
-    "start": "npm run compile && node dist/index.js",
+    "start": "npm run compile && npm run copydata && node dist/index.js",
     "start-docker": "apidoc -i src/routes/ -o dist/docs/ && node dist/index.js",
     "test": "jest --colors --silent",
     "watch": "jest --coverage --watchAll",
     "all_docs": "npm run docs && npm run tplant && npm run copydata",
     "docs": "apidoc -i src/routes/ -o dist/docs ",
     "tplant": "tplant --input src/App.ts  -A --output dist/docs/dcl.svg",
-    "compile": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
+    "compile": "tsc",
     "copydata": "shx cp -R src/data dist/data"
   },
   "watch": {
@@ -45,6 +45,7 @@
     "express": "^4.19.2",
     "md5": "^2.3.0",
     "morgan": "^1.10.0",
-    "multimap": "^1.1.0"
+    "multimap": "^1.1.0",
+    "node-fetch": "^3.3.2"
   }
 }
