@@ -20,7 +20,7 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 ## Voulez-vous utiliser ce serveur?
 
-1. [Installer Node.js 22](https://nodejs.org/en/download/package-manager) ou supérieur
+1. [Installer Node.js 20](https://nodejs.org/en/download/package-manager) ou supérieur
 1. (Créer une fork et) Cloner
 1. Installer les dépendances Node - `npm install`
 1. Compiler les sources et lancer le serveur de développement - `npm start`
