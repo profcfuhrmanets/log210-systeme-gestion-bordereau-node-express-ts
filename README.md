@@ -39,7 +39,9 @@ Voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0
 
 ## Consulter la documentation de l'API
 
-Pour générer et consulter la documentation, exécuter `npm run all_docs`, puis `npm start`. Ouvrir l'URL affichée dans la console.
+La [documentation de l'API](https://profcfuhrmanets.github.io/log210-systeme-gestion-bordereau-node-express-ts/) a été générée avec [apidoc](https://apidocjs.com/).
+
+Pour générer et consulter la documentation localement (par exemple, dans un clone), exécuter `npm run all_docs`, puis `npm start`. Ouvrir l'URL affichée dans la console.
 
 ## Interagir avec l'API avec TypeScript
 
