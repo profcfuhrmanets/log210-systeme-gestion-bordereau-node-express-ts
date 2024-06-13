@@ -15,22 +15,14 @@ export class StudentRouter
 
     public login(req: Request, res: Response, next: NextFunction)
     {
-        try
-        {
-            let data = this.controller.login(req.query.email as string, req.query.password as string);
-            
-            res.status(200).send({
-                message: 'Success',
-                status: res.status,
-                token: data.token,
-                user: data.user
-            });
-        }
-        catch (error: any)
-        {
-            console.error(error);
-            res.status(500).json({ error: error.toString() });
-        }
+        let data = this.controller.login(req.query.email as string, req.query.password as string);
+        
+        res.status(200).send({
+            message: 'Success',
+            status: res.status,
+            token: data.token,
+            user: data.user
+        });
     }
 
     public all(req: Request, res: Response, next: NextFunction)
@@ -46,22 +38,14 @@ export class StudentRouter
 
     public fromtoken(req: Request, res: Response, next: NextFunction)
     {
-        try
-        {
-            let token: string = req.query.token as string;
-            let data = this.controller.fromToken(token);
-            
-            res.status(200).send({
-                message: 'Success',
-                status: res.status,
-                user: data
-            });
-        } 
-        catch (error: any)
-        {
-            console.log(error);
-            res.status(500).json({ error: error.toString() });
-        }
+        let token: string = req.query.token as string;
+        let data = this.controller.fromToken(token);
+        
+        res.status(200).send({
+            message: 'Success',
+            status: res.status,
+            user: data
+        });
     }
 
     public groupstudent(req: Request, res: Response, next: NextFunction)
@@ -119,15 +103,13 @@ export class StudentRouter
         *   id: string,
         *    }
         */
-        this.router.get('/fromtoken', this.fromtoken.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-
+        this.router.get('/fromtoken', this.fromtoken.bind(this));
 
         /**
         * @api {get} /api/v3/student/groupstudent Récupérer le lien entre les étudiants et les groupes
         * @apiGroup Student
         * @apiDescription Récupérer le lien entre les étudiants et les groupes.
         * @apiVersion 3.0.0
-        *
         *
         * @apiSuccess (200) {JSON}   data [{ 
         *   group_id: string,

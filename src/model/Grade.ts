@@ -1,5 +1,6 @@
 import Multimap = require("multimap");
 import { GradeJSON } from ".";
+import { InvalidParameterError } from "../errors/InvalidParameterError";
 
 export class Grade
 {
@@ -23,7 +24,7 @@ export class Grade
     {
         if (grade < 0)
         {
-            throw new Error("The grade cannot be lower than 0.");
+            throw new InvalidParameterError("The grade cannot be lower than 0.");
         }
 
         Grade.multimap.set(student_id, {

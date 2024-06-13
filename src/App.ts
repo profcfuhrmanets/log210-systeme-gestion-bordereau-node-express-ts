@@ -1,4 +1,5 @@
 import express = require('express');
+import { Request, Response, NextFunction } from 'express';
 import logger = require('morgan');
 const path = require('path')
 
@@ -9,6 +10,9 @@ import { studentRouter } from './routes/StudentRouter';
 import { teacherRouter } from './routes/TeacherRouter';
 import { healthRouter as healthRouter } from './routes/HealthRouter';
 import { gradeRouter } from './routes/GradeRouter';
+import AbstractError from './errors/AbstractError';
+import { InternalError } from './errors/InternalError';
+import { NotFoundError } from './errors/NotFoundError';
 
 /**
  * Creates and configures an ExpressJS web server
@@ -25,6 +29,7 @@ class App
         this.express = express();
         this.middleware();
         this.routes();
+        this.express.use(this.errorHandler);
     }
 
     /**
@@ -62,6 +67,34 @@ class App
         this.express.use('/docs', express.static(path.join(__dirname, 'docs')));
         this.express.use('/static', express.static(path.join(__dirname, 'public')));
         this.express.use('/', router);
+        this.express.use(function(req:Request, res:Response)
+        {
+            throw new NotFoundError("La route demandée n'existe pas.");
+        });
+    }
+
+    /**
+     * Logs the errors in the console and sends them as JSON to the caller
+     * @param error The error to handle
+     * @param req The request object
+     * @param res The response object
+     * @param next The next function to call
+     */
+    private errorHandler(error:Error, req:Request, res:Response, next:NextFunction)
+    {
+        var myError:AbstractError;
+
+        if (error instanceof AbstractError)
+        {
+            myError = error;
+        }
+        else
+        {
+            myError = new InternalError();
+        }
+
+        console.log(error);
+        res.status(myError.code).json({"error": myError});
     }
 }
 

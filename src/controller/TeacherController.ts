@@ -1,5 +1,6 @@
 import { Teacher } from '../model/Teacher';
 import type { TeacherJSON } from '../model';
+import { NotFoundError } from '../errors/NotFoundError';
 
 export class TeacherController
 {
@@ -10,7 +11,7 @@ export class TeacherController
         if (teacher !== null)
             return teacher;
 
-        throw new Error("Email and password do not match teacher");
+        throw new NotFoundError(`The teacher ${email} does not exist. Did you forget to URL encode its email?`);
     }
 
     public fromToken(token: string)

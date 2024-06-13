@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { GradeController } from '../controller/GradeController';
+import { InvalidParameterError } from '../errors/InvalidParameterError';
 
 export class GradeRouter
 {
@@ -25,7 +26,7 @@ export class GradeRouter
 
         if (!student_id || !group_id || !type || !type_id || !grade)
         {
-            throw new Error("Au moins un paramètre est manquant ou incorrect.");
+            throw new InvalidParameterError("Au moins un paramètre est manquant ou incorrect.");
         }
 
         let data = this.controller.insert(student_id, group_id, type, type_id, grade);
