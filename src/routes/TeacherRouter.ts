@@ -17,22 +17,14 @@ export class TeacherRouter
 
     public login(req: Request, res: Response, next: NextFunction)
     {
-        try
-        {
-            let data = this.controller.login(req.query.email as string, req.query.password as string);
+        let data = this.controller.login(req.query.email as string, req.query.password as string);
 
-            res.status(200).send({
-                message: 'Success',
-                status: res.status,
-                token: data.token,
-                user: data.user
-            });
-        }
-        catch (error: any)
-        {
-            console.error(error);
-            res.status(500).json({ error: error.toString() });
-        }
+        res.status(200).send({
+            message: 'Success',
+            status: res.status,
+            token: data.token,
+            user: data.user
+        });
     }
 
     public all(req: Request, res: Response, next: NextFunction)
@@ -48,28 +40,18 @@ export class TeacherRouter
 
     public fromtoken(req: Request, res: Response, next: NextFunction)
     {
-        try
-        {
-            let token: string = req.query.token as string;
-
-            let data = this.controller.fromToken(token);
-            
-            res.status(200).send({
-                message: 'Success',
-                status: res.status,
-                user: data
-            });
-        }
-        catch (error: any)
-        {
-            console.error(error);
-            res.status(500).json({ error: error.toString() });
-        }
+        let token: string = req.query.token as string;
+        let data = this.controller.fromToken(token);
+        
+        res.status(200).send({
+            message: 'Success',
+            status: res.status,
+            user: data
+        });
     }
 
     init()
     {
-
         /**
           * @api {get} /api/v3/teacher/login?email=:email&password=:password S'authentifier en tant qu'enseignant et obtenir un jeton d'authentification
           * @apiGroup Teacher
@@ -89,32 +71,31 @@ export class TeacherRouter
         this.router.get('/login', this.login.bind(this));
 
         /**
-        * @api {get}/api/v3/teacher/all Récupération de tous les enseignants
-        * @apiGroup Teacher
-        * @apiDescription Récupération de tous les enseignants.
-        * @apiVersion 3.0.0
-        * @apiSuccess (200) {JSON} user [{
-        *   first_name: string,
-        *   last_name: string,
-        *   id: string 
-        * }]
-        */
+         * @api {get}/api/v3/teacher/all Récupération de tous les enseignants
+         * @apiGroup Teacher
+         * @apiDescription Récupération de tous les enseignants.
+         * @apiVersion 3.0.0
+         * @apiSuccess (200) {JSON} user [{
+         *   first_name: string,
+         *   last_name: string,
+         *   id: string 
+         * }]
+         */
         this.router.get('/all', this.all.bind(this));
 
-
         /**
-          * @api {get}/api/v3/teacher/fromtoken?token=:token Récupérer un enseignant à partir de son jeton d'authentification
-          * @apiGroup Teacher
-          * @apiDescription Récupérer un enseignant à partir de son jeton d'authentification.
-          * @apiVersion 3.0.0
-          * @apiQuery {String} token Jeton d'authentification de l'enseignant.
-          * 
-          * @apiSuccess (200) {JSON} user {
-          *   first_name: string,
-          *   last_name: string,
-          *   id: string 
-          * }
-          */
+         * @api {get}/api/v3/teacher/fromtoken?token=:token Récupérer un enseignant à partir de son jeton d'authentification
+         * @apiGroup Teacher
+         * @apiDescription Récupérer un enseignant à partir de son jeton d'authentification.
+         * @apiVersion 3.0.0
+         * @apiQuery {String} token Jeton d'authentification de l'enseignant.
+         * 
+         * @apiSuccess (200) {JSON} user {
+         *   first_name: string,
+         *   last_name: string,
+         *   id: string 
+         * }
+         */
         this.router.get('/fromtoken', this.fromtoken.bind(this));
     }
 }

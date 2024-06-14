@@ -2,6 +2,7 @@ import md5 = require('md5');
 import { Schedule } from './Schedule';
 import { GroupStudentJSON } from '.';
 import { validUserJSON, StudentJSON } from '.'
+import { NotFoundError } from '../errors/NotFoundError';
 
 export class Student
 {
@@ -18,7 +19,7 @@ export class Student
 
         if (!student)
         {
-            throw new Error("Student token not found");
+            throw new NotFoundError("Student token not found");
         }
 
         return student;

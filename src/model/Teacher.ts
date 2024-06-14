@@ -1,5 +1,6 @@
 import md5 = require('md5');
 import { TeacherJSON } from '.';
+import { NotFoundError } from '../errors/NotFoundError';
 
 export class Teacher
 {
@@ -16,7 +17,7 @@ export class Teacher
 
         if (!teacher)
         {
-            throw new Error("Teacher token not found");
+            throw new NotFoundError("Teacher token not found");
         }
 
         return teacher;
