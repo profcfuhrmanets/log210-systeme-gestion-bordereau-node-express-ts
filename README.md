@@ -30,13 +30,6 @@ Ce système doit être utilisé pour obtenir l'information de base pour la réal
 
 Voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a40
 
-## Utiliser ce serveur avec Docker (optionnel)
-
-- Création de votre image docker
-  - `docker build -t sgb --file Dockerfile .`
-- Exécuter votre image docker
-  - `docker run -p 3200:3200 sgb`
-
 ## Consulter la documentation de l'API
 
 La [documentation de l'API](https://profcfuhrmanets.github.io/log210-systeme-gestion-bordereau-node-express-ts/) a été générée avec [apidoc](https://apidocjs.com/).

@@ -6,7 +6,6 @@
   "scripts": {
     "startWithDoc": "npm run compile && npm run all_docs && node dist/index.js",
     "start": "npm run compile && npm run copydata && node dist/index.js",
-    "start-docker": "apidoc -i src/routes/ -o dist/docs/ && node dist/index.js",
     "test": "jest --colors --silent",
     "watch": "jest --coverage --watchAll",
     "all_docs": "npm run docs && npm run tplant && npm run copydata",
