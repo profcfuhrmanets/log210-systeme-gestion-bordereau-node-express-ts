@@ -69,7 +69,11 @@ class App
         this.express.use('/', router);
         this.express.use(function(req:Request, res:Response)
         {
-            throw new NotFoundError("La route demandée n'existe pas.");
+            let errorMessage = "La route demandée n'existe pas.";
+            if (req.path.startsWith('/docs')) {
+                errorMessage += " Veuillez noter que la documentation doit être générée la première fois avec la commande `npm run all_docs`.";
+            }
+            throw new NotFoundError(errorMessage);    
         });
     }
 
