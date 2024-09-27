@@ -76,9 +76,9 @@ export class StudentRouter
         this.router.get('/login', this.login.bind(this));
 
         /**
-        * @api {get} /api/v3/student/all Récupérer tous les enseignants
+        * @api {get} /api/v3/student/all Récupérer tous les étudiants
         * @apiGroup Student
-        * @apiDescription Récupérer tous les enseignants.
+        * @apiDescription Récupérer tous les étudiants.
         * @apiVersion 3.0.0
         * @apiSuccess (200) {JSON}  data [{
         *   first_name: string,
