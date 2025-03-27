@@ -79,12 +79,12 @@ export class GradeRouter
         this.router.post('/insert', this.insert.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
 
         /**
-        * @api {get} /api/v3/grade/student/:student_id Récupérer les notes d'un étudiant
+        * @api {get} /api/v3/grade/student?student_id=:student_id Récupérer les notes d'un étudiant
         * @apiGroup Grade
         * @apiDescription Liste des notes d'un étudiant.
         * @apiVersion 3.0.0
         *
-        * @apiParam {String} student_id Identifiant de l'étudiant.
+        * @apiQuery {String} student_id Courriel de l'étudiant. Vous devez l'encoder avec <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">URL Encode</a>.
         
         * @apiSuccess (200) {JSON}  data
         [
@@ -100,12 +100,12 @@ export class GradeRouter
         this.router.get('/student', this.student.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
 
         /**
-        * @api {get} /api/v3/grade/group/:group_id Récupérer les notes d'un groupe
+        * @api {get} /api/v3/grade/group?group_id=:group_id Récupérer les notes d'un groupe
         * @apiGroup Grade
         * @apiDescription Liste des notes d'un groupe.
         * @apiVersion 3.0.0
         *
-        * @apiParam {String} group_id Identifiant du groupe.
+        * @apiQuery {String} group_id Identifiant du groupe.
         
         * @apiSuccess (200) {JSON}  data
         [
