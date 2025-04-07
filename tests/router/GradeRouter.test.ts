@@ -39,6 +39,32 @@ describe("GradeRouterTest", () =>
         expect(res.body.data).toMatchObject([expected]);
     }, 10000);
 
+    it("allows the grade of 0", async () =>
+    {
+        let res = await request.post('/api/v3/grade/insert').send({
+            "student_id": "first_name.last_name%2B1%40gmail.com",
+            "group_id": "S20213-LOG210-01",
+            "type": "Devoir1",
+            "type_id": 2,
+            "grade": 0
+        });
+
+        expect(res.status).toBe(200);
+    });
+
+    it("allows the type of 0", async () =>
+        {
+            let res = await request.post('/api/v3/grade/insert').send({
+                "student_id": "first_name.last_name%2B1%40gmail.com",
+                "group_id": "S20213-LOG210-01",
+                "type": "Devoir1",
+                "type_id": 0,
+                "grade": 100
+            });
+    
+            expect(res.status).toBe(200);
+        });
+
     it("returns an error when a parameter is missing or is not of the right type", async () =>
     {
         let res = await request.post('/api/v3/grade/insert').send({

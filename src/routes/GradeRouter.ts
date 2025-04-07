@@ -24,7 +24,7 @@ export class GradeRouter
         var type_id = parseInt(req.body.type_id);
         var grade = parseFloat(req.body.grade);
 
-        if (!student_id || !group_id || !type || !type_id || !grade)
+        if (!student_id || !group_id || !type || isNaN(type_id) || isNaN(grade))
         {
             throw new InvalidParameterError("Au moins un paramètre est manquant ou incorrect.");
         }
