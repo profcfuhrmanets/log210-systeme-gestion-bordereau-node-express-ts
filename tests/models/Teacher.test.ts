@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import md5 from 'md5';
 import { Teacher } from '../../src/model/Teacher';
 import { NotFoundError } from '../../src/errors/NotFoundError';

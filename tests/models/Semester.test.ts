@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { SemesterJSON } from '../../src/model';
 import { Semester } from '../../src/model/Semester';
 

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { InternalError } from "../../src/errors/InternalError";
 
 describe("InternalError", () =>

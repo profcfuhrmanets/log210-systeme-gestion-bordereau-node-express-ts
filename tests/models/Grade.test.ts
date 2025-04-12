@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { InvalidParameterError } from '../../src/errors/InvalidParameterError';
 import { Grade } from '../../src/model/Grade';
 

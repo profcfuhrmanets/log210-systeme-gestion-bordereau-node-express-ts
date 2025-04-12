@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { CourseController } from '../../src/controller/CourseController';
 import type { CourseJSON } from "../../src/model";
 
