@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { TeacherController } from '../../src/controller/TeacherController';
 import { NotFoundError } from '../../src/errors/NotFoundError';
 import type { TeacherJSON } from '../../src/model';

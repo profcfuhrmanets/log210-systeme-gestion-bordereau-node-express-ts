@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { ScheduleJSON } from '../../src/model';
 import { Schedule } from '../../src/model/Schedule';
 

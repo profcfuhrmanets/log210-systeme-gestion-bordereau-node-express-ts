@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { GradeController } from '../../src/controller/GradeController';
 
 describe('CourseControllerTest', () =>
